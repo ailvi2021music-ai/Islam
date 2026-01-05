@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1220" />
+  <title>VIC Deen</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">V</div>
+        <div class="titles">
+          <div class="name">VIC Deen</div>
+          <div class="subtitle" id="subtitle">Today</div>
+        </div>
+      </div>
+      <button class="btn" id="btnAction" aria-label="Action">⋯</button>
+    </header>
+
+    <main class="content">
+      <section class="view" data-view="today">
+        <div class="card">
+          <div class="cardTitle">Сегодня</div>
+          <div class="muted">На следующем шаге добавим локацию и расчёт времени намаза.</div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Быстрые кнопки</div>
+          <div class="grid2">
+            <button class="pill" data-toast="Скоро: Namaz Times">Время намаза</button>
+            <button class="pill" data-toast="Скоро: Qibla">Кибла</button>
+            <button class="pill" data-toast="Скоро: Last read">Последнее чтение</button>
+            <button class="pill" data-toast="Скоро: Morning adhkar">Утренние азкары</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="quran" hidden>
+        <div class="card">
+          <div class="cardTitle">Коран</div>
+          <div class="muted">На следующем шаге загрузим проверенный текст и сделаем поиск/закладки.</div>
+        </div>
+      </section>
+
+      <section class="view" data-view="dua" hidden>
+        <div class="card">
+          <div class="cardTitle">Дуа</div>
+          <div class="muted">На следующем шаге добавим коллекции (утро/вечер/сон/стресс) и избранное.</div>
+        </div>
+      </section>
+
+      <section class="view" data-view="settings" hidden>
+        <div class="card">
+          <div class="cardTitle">Настройки</div>
+
+          <div class="row">
+            <div>
+              <div class="label">Тема</div>
+              <div class="muted">Светлая/тёмная (пока тёмная)</div>
+            </div>
+            <button class="pill" id="toggleTheme">Скоро</button>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="label">Приватность</div>
+              <div class="muted">Без рекламы и трекинга — по умолчанию.</div>
+            </div>
+            <span class="badge">OK</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="tabbar" role="tablist" aria-label="Навигация">
+      <button class="tab active" data-tab="today" role="tab" aria-selected="true">Today</button>
+      <button class="tab" data-tab="quran" role="tab" aria-selected="false">Qur’an</button>
+      <button class="tab" data-tab="dua" role="tab" aria-selected="false">Dua</button>
+      <button class="tab" data-tab="settings" role="tab" aria-selected="false">Settings</button>
+    </nav>
+
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
